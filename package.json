@@ -42,7 +42,7 @@
     "npm": ">=3"
   },
   "dependencies": {
-    "lodash": "4.17.10",
+    "lodash": "4.17.15",
     "prop-types": "15.6.2",
     "rc-slider": "^8.6.1",
     "react": "16.4.2",
