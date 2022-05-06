@@ -17,7 +17,7 @@ const Echange = ({defaultAmount = 0, defaultPeriod = 0, unit}) => {
                     min={5000}
                     max={50000}
                     unit={unit}
-                    handleAmount={(data) => setAmount(data)}
+                    onChange={(data) => setAmount(data)}
                     defaultValue={amount}
                     step={500}
                 />
@@ -25,7 +25,7 @@ const Echange = ({defaultAmount = 0, defaultPeriod = 0, unit}) => {
                     title="Plazo"
                     min={3}
                     max={24}
-                    handleAmount={(data) => setPeriod(data)}
+                    onChange={(data) => setPeriod(data)}
                     defaultValue={period}
                     step={1}
                 />

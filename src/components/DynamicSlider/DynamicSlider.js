@@ -3,12 +3,20 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import "./DynamicSlider.scss";
 
-const DynamicSlider = ({title, handleAmount, min, max, unit, defaultValue, step}) => {
+const DynamicSlider = ({title, onChange, min, max, unit, defaultValue, step}) => {
     const [amount, setAmount] = useState(defaultValue);
+    const [error, setError] = useState(false);
 
-    useEffect(() => {
-        handleAmount(amount);
-    }, [amount, handleAmount])
+    const handleAmount = (value) => {
+        if (value >= min && value <= max) {
+            onChange(value);
+            setAmount(value);
+            error && setError(false);
+        } else {
+            setAmount(value);
+            !error && setError(true);
+        }
+    }
 
     return (
         <div className="pb-8 dynamic-slider">
@@ -17,16 +25,17 @@ const DynamicSlider = ({title, handleAmount, min, max, unit, defaultValue, step}
                 <div className="field-input">
                     <input
                         value={amount}
-                        name="name"
+                        name={title}
                         type="text"
-                        onChange={(e) => setAmount(+e.target.value || 0)}
-                    />
+                        onChange={(e) => handleAmount(+e.target.value || 0)}
+                    /><br />
+                    {error && <span>Ingrese un monto valido</span>}
                 </div>
             </div>
             <div className="field-slider">
                 <Slider
                     onChange={(nextValues) => {
-                        setAmount(nextValues)
+                        handleAmount(nextValues)
                     }}
                     value={amount}
                     min={min}

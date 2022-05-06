@@ -13,6 +13,8 @@
         }
 
         .field-input {
+            text-align: right;
+            
             input {
                 background: transparent;
                 border: 1px solid #FFF;
@@ -26,6 +28,11 @@
                 &::after {
                     content: '$'
                 }
+            }
+
+            span {
+                font-size: 14px;
+                color: red;
             }
         }
 
