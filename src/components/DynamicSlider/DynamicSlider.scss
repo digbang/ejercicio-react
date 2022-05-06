@@ -1,0 +1,38 @@
+.dynamic-slider {
+    margin-bottom: 5px;
+    padding-left: 14px;
+    padding-right: 14px;
+    text-transform: uppercase;
+
+    .fields {
+        margin-bottom: 13px; 
+
+        .field-title {
+            font-size: 18px;
+            padding: 7px;
+        }
+
+        .field-input {
+            input {
+                background: transparent;
+                border: 1px solid #FFF;
+                font-size: 24px;
+                font-weight: bold;
+                padding: 0px 0;
+                text-align: center;
+                width: 152px;
+                letter-spacing: 1px;
+
+                &::after {
+                    content: '$'
+                }
+            }
+        }
+
+    }
+    
+    .field-slider {
+        text-transform: uppercase;
+        padding: 0 28px 5px;
+    }
+}

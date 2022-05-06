@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import "./DynamicSlider.scss";
 
 const DynamicSlider = ({title, handleAmount, min, max, unit, defaultValue, step}) => {
     const [amount, setAmount] = useState(defaultValue);
@@ -10,12 +11,11 @@ const DynamicSlider = ({title, handleAmount, min, max, unit, defaultValue, step}
     }, [amount, handleAmount])
 
     return (
-        <div className="pb-8">
-            <div className="fields flex justify-between pb-4">
+        <div className="pb-8 dynamic-slider">
+            <div className="fields flex justify-between">
                 <div className="field-title uppercase">{title}</div>
                 <div className="field-input">
                     <input
-                        className="p-1 text-white text-center center bg-transparent border border-white"
                         value={amount}
                         name="name"
                         type="text"
@@ -23,7 +23,7 @@ const DynamicSlider = ({title, handleAmount, min, max, unit, defaultValue, step}
                     />
                 </div>
             </div>
-            <div className="field-slider px-10">
+            <div className="field-slider">
                 <Slider
                     onChange={(nextValues) => {
                         setAmount(nextValues)

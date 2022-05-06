@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DynamicSlider from './DynamicSlider/DynamicSlider';
+import "./echange.scss";
 
 const Echange = ({defaultAmount = 0, defaultPeriod = 0, unit}) => {
     const [amount, setAmount] = useState(defaultAmount);
@@ -8,9 +9,9 @@ const Echange = ({defaultAmount = 0, defaultPeriod = 0, unit}) => {
     const goTo = () => {}
 
     return (
-        <div className="inline-block w-2/4 m-10 p-10 bg-blue-700 text-white font-normal">
-            <div className="w-full p-10 bg-blue-800">
-                <h2 className="text-4xl font-extrabold pb-10">Simulá tu crédito</h2>
+        <div className="echange text-white">
+            <div className="echange-container">
+                <h2>Simulá tu crédito</h2>
                 <DynamicSlider 
                     title="Monto total"
                     min={5000}
@@ -28,19 +29,19 @@ const Echange = ({defaultAmount = 0, defaultPeriod = 0, unit}) => {
                     defaultValue={period}
                     step={1}
                 />
-                <div className="periods flex justify-between bg-blue-900 p-6">
-                    <div className="field-label uppercase leading-10">Cuota fija por mes</div>
-                    <div className="field-total uppercase text-4xl">${(amount / period).toFixed(2)}</div>
+                <div className="periods flex justify-between">
+                    <div className="field-label">Cuota fija por mes</div>
+                    <div className="field-total">$ {(amount / period).toFixed(2)}</div>
                 </div>
-                <div className="field-buttons  flex justify-between">
+                <div className="buttons flex">
                     <button 
-                        className="input-submit uppercase bg-green-800 p-6 uppercase text-xl"
+                        className="get-credit"
                         onClick={() => goTo()}
                     >
                         Obtene credito
                     </button>
                     <button 
-                        className="info-submit uppercase bg-blue-800 p-6 uppercase text-xl"
+                        className="detail"
                         onClick={() => goTo()}
                     >
                         Ver detalle de cuotas

@@ -1,0 +1,62 @@
+.echange {
+    display: inline-block;
+    background-color: #085086;
+    padding: 100px 64px;
+    width: 712px;
+    color: #fff;
+    font-weight: normal;
+
+    .echange-container {
+        background-color: #003B66;
+        padding: 42px 40px;
+
+        h2 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 50px
+        }
+
+        .periods {
+            background-color: #00365D;
+            padding-bottom: 5px;
+
+            .field-label {
+                font-size: 17px;
+                font-weight: bold;
+                padding-left: 28px;
+                padding-top: 18px;
+                text-transform: uppercase;
+            }
+
+            .field-total {
+                font-weight: bold;
+                font-size: 40px;
+                padding-right: 33px;
+            }
+        }
+
+        .buttons {
+            button {
+                text-transform: uppercase;
+
+                &.get-credit {
+                    background-color: #17AB8D;
+                    margin-right: 10px;
+                    font-size: 22px;
+                    font-weight: bold;
+                    width: 361px;
+                    line-height: 54px;
+                }
+
+                &.detail {
+                    background-color: #0B548B;
+                    font-weight: bold;
+                    font-size: 14px;
+                    width: 177px;
+                    padding: 13px 17px;
+                    line-height: 15px;
+                }
+            }
+        }
+    }
+}
